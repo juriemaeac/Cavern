@@ -5,13 +5,13 @@ player.state = 1  -- 0 (cutscene), 1 (free to move)
 player.width = 80
 player.height = 192
 
-player.physics = world:newBSGRectangleCollider(1500, 600, player.width,
-  player.height, 22)
+player.physics = world:newBSGRectangleCollider(1500, 600, player.width + 55,
+  player.height+20, 22)
 player.physics:setCollisionClass('Player')
 player.physics:setLinearDamping(2)
 player.physics:setFixedRotation(true)
 player.moveForce = 45000
-player.maxSpeed = 500
+player.maxSpeed = 5000 --500 talaga
 
 player.health = gameState.player.maxHealth
 player.damaged = 0 -- timer for the damage flash
@@ -427,11 +427,11 @@ function player:draw()
   end
 
   -- draw jetpack first
-  love.graphics.draw(jetSprite, px + (player.facing * -12), py + 10, nil, player.facing, 1, 38, 60)
+  love.graphics.draw(jetSprite, px + (player.facing * -12), py + 10, nil, player.facing, 1, 65, 85)
   -- body uses player.facing to turn the correct direction (towards the mouse)
   love.graphics.draw(sprites.player.body, px + (player.facing * -14), py+3, nil, player.facing, 1, 38, 60)
   -- helmet rotates towards the mouse, flips vertically if facing left
-  love.graphics.draw(sprites.player.helmet, px + (player.facing * 2), py-44, headAngle, 1, flip, 24, 64)
+  love.graphics.draw(sprites.player.helmet, px + (player.facing * 2), py-44, headAngle, 1, flip, 32, 64)
 
   -- Draw arms / weapons
   if player.weapon == 0 then
@@ -441,20 +441,20 @@ function player:draw()
       -- Fixes the angle when facing left
       armAngle = armAngle + 3
     end
-    love.graphics.draw(armSprite, px + (moveX * player.facing), py + moveY, armAngle/3, flip, 1, ox, oy)
+    love.graphics.draw(armSprite, px + (moveX * player.facing), py + moveY, armAngle/3, flip, 1, ox+10, oy+1)
 
   elseif player.weapon == 1 then
 
     armSprite = sprites.player.armBlaster
     moveX = -18
     moveY = -20
-    ox = 8
-    oy = 20
+    EW = 8
+    oy = 20+50
 
   elseif player.weapon == 2 then
 
     armSprite = sprites.player.armRocket
-    ox = 16
+    EQ = 16
     oy = 42
     moveX = -17
     moveY = -11
@@ -577,7 +577,9 @@ function player:hurt(damage)
   damage = damage + math.random(0, 1)
   if self.damaged == 0 then
     self.damaged = 1
-    self.health = self.health - damage
+    
+    --IMMUNE KO MUNA PARA NAMAN MAKARATING AKO SA DULO NG HINDI NAMAMATAY
+    --self.health = self.health - damage
     damages:spawnDamage(self.physics:getX(), self.physics:getY(), damage)
     shake:start(0.05, 6, 0.01, 0.3)
     player.barTimer = 3 -- healthbar is visibile for 3 seconds

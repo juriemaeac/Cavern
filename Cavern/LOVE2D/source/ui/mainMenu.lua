@@ -22,7 +22,7 @@ function menuDraw()
 
     love.graphics.setFont(fonts.menu.title)
     love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.printf("CAVERN", 0, 140 * scale, gameWidth * scale, "center")
+    love.graphics.printf("Swamp Busters", 0, 40 * scale, gameWidth * scale, "center")
 
     -- Start message off as nothing, will be updated if hovering over a button
     buttons.message = ""
@@ -52,7 +52,7 @@ function menuDraw()
         elseif bText == ".sound" then
           buttons.message = "Turn music and sound effects on or off"
         elseif bText == ".github" then
-          buttons.message = "View the code on GitHub"
+          buttons.message = "Created by Lance Philip Parungao\nBSCpE 2 - 6\nas a requirement in Game Development course subject."
         end
 
       end
@@ -77,7 +77,7 @@ function menuDraw()
 
   love.graphics.setColor(1, 1, 1, 1)
   love.graphics.setFont(fonts.menu.message)
-  love.graphics.printf(buttons.message, 0, love.graphics.getHeight() - 80, love.graphics.getWidth(), "center")
+  love.graphics.printf(buttons.message, 0, love.graphics.getHeight() - 100, love.graphics.getWidth(), "center")
 
 end
 
@@ -145,7 +145,8 @@ function buttons:click()
       elseif i == 4 then -- GitHub button
 
         -- Open the GitHub page for this game!
-        love.system.openURL("https://github.com/kyleschaub/cavern")
+        --love.system.openURL("https://github.com/juriemaeac/random")
+        
 
       end
 

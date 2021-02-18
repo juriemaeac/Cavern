@@ -39,7 +39,7 @@ local function bossInit(enemy, x, y, arg)
   enemy.eyes = {}
   --enemy.eye = spawnEye(ex, ey, 0, 1, sprites.enemies.bigBossEye)
 
-  for i=1, 14 do -- spawn 10 eyes
+  for i=1, 8 do -- spawn 10 eyes
 
     local eye = {}
 
@@ -51,61 +51,37 @@ local function bossInit(enemy, x, y, arg)
     eye.relY = 0
 
     if i == 1 then
-      eye.relX = 0
-      eye.relY = 0
-      eye.scale = 1
-    elseif i == 2 then
-      eye.relX = 250
+      eye.relX = 280
       eye.relY = -30
-      eye.scale = 0.37
-    elseif i == 3 then
-      eye.relX = -250
-      eye.relY = -30
-      eye.scale = 0.37
-    elseif i == 4 then
-      eye.relX = 320
-      eye.relY = -200
-      eye.scale = 0.27
-    elseif i == 5 then
-      eye.relX = -320
-      eye.relY = -200
-      eye.scale = 0.27
-    elseif i == 6 then
-      eye.relX = 500
-      eye.relY = -160
-      eye.scale = 0.39
-    elseif i == 7 then
-      eye.relX = -500
-      eye.relY = -160
-      eye.scale = 0.39
-    elseif i == 8 then
-      eye.relX = 680
-      eye.relY = -60
-      eye.scale = 0.23
-    elseif i == 9 then
-      eye.relX = -680
-      eye.relY = -60
-      eye.scale = 0.23
-    elseif i == 10 then
-      eye.relX = 740
-      eye.relY = -220
-      eye.scale = 0.31
-    elseif i == 11 then
-      eye.relX = -740
-      eye.relY = -220
-      eye.scale = 0.31
-    elseif i == 12 then
-      eye.relX = 450
-      eye.relY = 20
-      eye.scale = 0.31
-    elseif i == 13 then
-      eye.relX = -450
-      eye.relY = 20
-      eye.scale = 0.31
-    elseif i == 14 then
-      eye.relX = -40
-      eye.relY = -210
       eye.scale = 0.26
+    elseif i == 2 then
+      eye.relX = -280
+      eye.relY = -30
+      eye.scale = 0.26
+    elseif i == 3 then
+      eye.relX = 380
+      eye.relY = -200
+      eye.scale = 0.20
+    elseif i == 4 then
+      eye.relX = -380
+      eye.relY = -200
+      eye.scale = 0.20
+    elseif i == 5 then
+      eye.relX = 580
+      eye.relY = -180
+      eye.scale = 0.33
+    elseif i == 6 then
+      eye.relX = -580
+      eye.relY = -180
+      eye.scale = 0.33
+    elseif i == 7 then
+      eye.relX = 440
+      eye.relY = -60
+      eye.scale = 0.23
+    elseif i == 8 then
+      eye.relX = -440
+      eye.relY = -60
+      eye.scale = 0.23
     end
 
     local eyeX = ex + eye.relX
@@ -371,7 +347,7 @@ local function bossInit(enemy, x, y, arg)
     sprW = self.sprite:getWidth()
     sprH = self.sprite:getHeight()
     love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.draw(self.sprite, sprX, sprY, nil, 1, 1, sprW/2, sprH/1.4)
+    love.graphics.draw(self.sprite, sprX, sprY+195, nil, 1, 1, sprW/2, sprH/1.4)
 
   end
 

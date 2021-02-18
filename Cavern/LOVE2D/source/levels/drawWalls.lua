@@ -34,6 +34,8 @@ local function drawWalls()
 
   end
 
+
+
   -- Draw the ground
   love.graphics.setColor(1, 1, 1, 1)
 
@@ -52,6 +54,7 @@ local function drawWalls()
       -- Draw the full rectangle for each wall
       --love.graphics.rectangle("fill", w.x, w.y, w.width, w.height)
 
+      --UPPER BORDER
       --[[
       love.graphics.setColor(1, 1, 1, 1)
 
@@ -83,14 +86,19 @@ local function drawWalls()
 
     for itrX=0, 1 do
       for itrY = 0, 1 do
-        love.graphics.draw(spr, b.x + (itrX * 128), b.y + (itrY * 128))
+        --love.graphics.draw(spr, b.x + (itrX * 60), b.y + (itrY * 128))
       end
     end
 
-    love.graphics.setColor(0, 0, 0, 1)
-    love.graphics.draw(sprites.environment.crack, b.x + 128, b.y + 128, b.crackRot, 1, 1, 90, 90)
+    love.graphics.setColor(1, 1, 1, 1)
+                                                --adjust papuntan left
+                                                            --
+                                                                                  --scale
+    love.graphics.draw(sprites.environment.crack, b.x + 110, b.y + 120, 0, 1.4, 1.25, 100, 100)
 
   end
 end
+
+
 
 return drawWalls

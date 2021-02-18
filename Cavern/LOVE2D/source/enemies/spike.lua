@@ -38,7 +38,8 @@ local function spikeInit(enemy, x, y, arg)
   enemy.scaleY = 1
   enemy.scaleTween = nil
 
-  enemy.eye = spawnEye(x, y, 0, 1.15, sprites.enemies.flyerEye)
+  --enemy.eye = spawnEye(x, y, 0, 1.15, sprites.enemies.flyerEye)
+  --enemy.eye1 = spawnEye(x, y, 0, 1.15, sprites.enemies.flyerEye1)
 
   function enemy:getRotationInfo()
 
@@ -161,12 +162,18 @@ local function spikeInit(enemy, x, y, arg)
     local ex, ey = self.physics:getPosition()
 
     -- Draw the eye
-    local sprW = self.eye.spr:getWidth()
-    local sprH = self.eye.spr:getHeight()
+    --local sprW = self.eye.spr:getWidth()
+    --local sprH = self.eye.spr:getHeight()
+
+    --local sprW1 = self.eye.spr:getWidth()
+    --local sprH1 = self.eye1.spr:getHeight()
+
+    
     local rotate, rotVec = self:getRotationInfo()
     local vx, vy = rotVec:unpack()
-    self.eye:update(dt, ex + (vx * (-2 + ((1 - self.scaleY) * sprH * 2))), ey + (vy * (-7 + ((1 - self.scaleY) * sprH * 2))), toPlayerRotate(ex, ey))
 
+    --self.eye:update(dt, ex + (vx * (-2 + ((1 - self.scaleY) * sprH * 2))), ey + (vy * (-7 + ((1 - self.scaleY) * sprH * 2))), toPlayerRotate(ex, ey))
+    --self.eye:update(dt, ex + (vx * (-2 + ((1 - self.scaleY) * sprH1 * 2))), ey + (vy * (-7 + ((1 - self.scaleY) * sprH1 * 2))), toPlayerRotate(ex, ey))
   end
 
   function enemy:draw()
@@ -174,7 +181,9 @@ local function spikeInit(enemy, x, y, arg)
     local sprX, sprY = self.physics.body:getPosition()
     local rotate, rotVec = self:getRotationInfo()
 
-    -- Draw the body
+    -- DRAW THE BODY
+    --width(sprW kapag nasa gilid, un ung distance from the parang floor)
+    --height(sprH kapag nasa taas or baba, un ung distance sa parang floor)
     sprW = self.sprite:getWidth()
     sprH = self.sprite:getHeight()
 
@@ -182,7 +191,9 @@ local function spikeInit(enemy, x, y, arg)
     local vx, vy = rotVec:unpack()
 
     love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.draw(self.sprite, sprX+(vx*sprW/2), sprY+(vy*sprH/2), rotate, self.scaleX, self.scaleY, sprW/2, sprH)
+
+    --body position edit
+    love.graphics.draw(self.sprite, sprX+(vx*sprW/2.8), sprY+(vy*sprH/2.8), rotate, self.scaleX, self.scaleY, sprW/2, sprH)
 
   end
 

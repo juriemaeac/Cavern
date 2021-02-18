@@ -142,8 +142,8 @@ function particles:draw()
     local px, py = p.physics:getPosition()
 
     if p.type == "break" then
-      love.graphics.setColor(0.247, 0.176, 0.114, p.alpha)
-      love.graphics.draw(sprites.environment.breakParticle, px, py, nil, 0.5, 0.5, 35, 35)
+      love.graphics.setColor(1, 1, 1, p.alpha)
+      love.graphics.draw(sprites.environment.breakParticle, px, py, p.rotate, 0.5, 0.5, 35, 35)
     end
 
     if p.type == "laserDebris" then

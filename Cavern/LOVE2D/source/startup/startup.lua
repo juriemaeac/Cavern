@@ -3,10 +3,10 @@ function startup()
   -- GAME WINDOW CONFIGURATION
 
   -- Window title
-  love.window.setTitle("CAVERN")
+  love.window.setTitle("Swamp Busters")
 
   -- Window icon
-  local icon = love.image.newImageData('sprites/newPlayer2/helmet.png')
+  local icon = love.image.newImageData('sprites/enemies/spikeBody1.png')
   love.window.setIcon(icon)
 
   -- Game resolution

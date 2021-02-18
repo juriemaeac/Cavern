@@ -21,7 +21,7 @@ local function batInit(enemy, x, y, arg)
   enemy.spriteTimerBase = 0.001
   enemy.spriteTimer = enemy.spriteTimerBase
 
-  enemy.eye = spawnEye(x, y, 0, 1, sprites.enemies.flyerEye)
+  --enemy.eye = spawnEye(x, y, 0, 1, sprites.enemies.flyerEye)
 
   -- Final boss can spawn these, and they shoot down
   -- if arg is true
@@ -57,7 +57,7 @@ local function batInit(enemy, x, y, arg)
     local ex, ey = self.physics:getPosition()
     local dir = toPlayerVector(ex, ey)
     local offX, offY = (dir * 16):unpack()
-    self.eye:update(dt, ex + offX, ey + offY, toPlayerRotate(ex, ey))
+    --self.eye:update(dt, ex + offX, ey + offY, toPlayerRotate(ex, ey))
   end
 
   function enemy:draw()
@@ -67,18 +67,18 @@ local function batInit(enemy, x, y, arg)
 
     local wingOffset = -24
     if self.wingSprite == sprites.enemies.flyerWing2 then
-      wingOffset = wingOffset + 5
+      wingOffset = wingOffset -5
     end
 
     -- Draw the wings first
-    love.graphics.setColor(1, 1, 1, 0.314)
-    love.graphics.draw(self.wingSprite, sprX, sprY + wingOffset, nil, 1, 1, sprW/2, sprH/2)
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.draw(self.wingSprite, sprX, sprY + wingOffset-5, toPlayerRotate(sprX, sprY), 1.1, 1.1, sprW/1.3, sprH/50)
 
     -- Draw the body of the flyer (rotates towards player)
-    sprW = self.sprite:getWidth()
-    sprH = self.sprite:getHeight()
-    love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.draw(self.sprite, sprX, sprY, toPlayerRotate(sprX, sprY), 1, 1, sprW/2, sprH/2)
+    --sprW = self.sprite:getWidth()
+    --sprH = self.sprite:getHeight()
+    --love.graphics.setColor(1, 1, 1, 1)
+    --love.graphics.draw(self.sprite, sprX, sprY, toPlayerRotate(sprX, sprY), 1, 1, sprW/2, sprH/2)
   end
 
   return enemy

@@ -3,7 +3,7 @@ vines = {}
 
 function spawnVine(x, y)
 
-  local vine = world:newRectangleCollider(x + 32, y + 16, 64, 640)
+  local vine = world:newRectangleCollider(x + 32, y + 16, 184, 640)
   vine:setCollisionClass('Wall')
   vine:setType('static')
 
@@ -61,7 +61,7 @@ function vines:draw()
   for i,v in ipairs(self) do
     love.graphics.setColor(1, 1, 1, 1)
     local vx, vy = v:getPosition()
-    love.graphics.draw(sprites.environment.vine, vx-32, vy-320)
+    love.graphics.draw(sprites.environment.vine, vx-112, vy-340)
   end
 
 end

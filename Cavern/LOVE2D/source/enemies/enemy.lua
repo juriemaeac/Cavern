@@ -182,6 +182,11 @@ function enemies:draw(drawBoss)
         e.eye:draw()
       end
 
+      --another eye haha
+      --if e.eye1 ~= nil then
+      --  e.eye1:draw()
+      --end
+
       -- only for the final boss
       if e.eyes ~= nil then
         for _,eye in ipairs(e.eyes) do
