@@ -1,5 +1,16 @@
 function love.load()
 
+  --FOR INTRO
+  --[[image = love.graphics.newImage("spritesheet.png")
+  quads = {}
+	local imgWidth = image:getWidth()
+  local imgHeight = image:getHeight()
+	local spriteWidth = imgWidth / 33
+	for i=0,33-1 do
+		table.insert(quads, love.graphics.newQuad(i * spriteWidth, 0, imgHeight, imgWidth, imgHeight))
+	end
+  timer = 0]]
+
   -- This function configures game window and performs additional setup
   require("source/startup/startup")
   startup()
@@ -18,6 +29,8 @@ function love.load()
 end
 
 function love.update(dt)
+  --FOR INTRO
+  --timer = timer + dt * 3
 
   if gameState.state == 1 then
     -- Handles most updating for the game
@@ -28,12 +41,15 @@ function love.update(dt)
   scroll:update(dt)
   textBox:update(dt)
 
+  
 end
 
 function love.draw()
+  --FOR INTRO
+  --love.graphics.draw(image, quads[(math.floor(timer) % 33) + 1], 100, 100)
 
   cam:attach()
-
+  
     -- Handles most drawing for the game
     local drawGameplay = require("source/draw")
     drawGameplay()
@@ -63,7 +79,7 @@ function love.draw()
   love.graphics.print(debug, 0, 100)
   love.graphics.print(debug2, 0, 120)
   ]]
-
+  
 end
 
 function love.mousepressed( x, y, button, istouch )

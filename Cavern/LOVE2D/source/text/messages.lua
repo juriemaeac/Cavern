@@ -38,16 +38,15 @@ messages.failedLoad = {
 }
 
 messages.intro = {
-  "1-31-2056              \n"
-  .. "St. Louis, Missouri, United States of America     @\n\n"
-  .. "Asteroid \"433 Eros\" has crashed into Earth approximately \n30 miles "
-  .. "southwest of the city.@The impact has uncovered the\nentrance to a series"
-  .. " of unexplored caves deep underground.      @\n\n"
-  .. "It was discovered in the year 2053 that Eros was home to a\nnew form of "
-  .. "life.@Movement has been detected beneath the\nsurface of the impact site,"
-  .. " indicating that these alien\nlifeforms have migrated into the caves."
-  .. "      @\n\n"
-  .. "We are sending an expert in to investigate."
+  "2-25-2021              \n\n"
+  .. "Candaba Swamp, Cabiao, Nueva Ecija  @\n\n"
+  .. "As George peacefully sleeps in his humble cabin in the woods,\n"
+  .. "weird bubbling and gushing sounds emanates from the surface \n"
+  .. "of the swamp. @His sleep was disturbed abruptly by this sounds\n"
+  .. "so, he  geared up and marched grumpily to the swamp.@\n\n"
+  .. "With his snorkeling goggles and his old, clanky breathing apparatus,\n"
+  .. "he dived into the murky waters of this stinky old swamp to \n"
+  .. "investigate what's causing these strange noises..."
 
 }
 
