@@ -22,7 +22,7 @@ function menuDraw()
   if gameState.room == "rmLogo" then
     --display game logo
     love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.draw(sprites.ui.intro, -130,1)
+    love.graphics.draw(sprites.ui.intro, 15 * scale -20,9 * scale -20,0, scale, scale)
   end  
   
   if gameState.room == "rmMainMenu" then

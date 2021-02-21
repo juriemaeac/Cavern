@@ -46,7 +46,8 @@ messages.intro = {
   .. "so, he  geared up and marched grumpily to the swamp.@\n\n"
   .. "With his snorkeling goggles and his old, clanky breathing \n"
   .. "apparatus, he dived into the murky waters of this stinky old \n"
-  .. "swamp to investigate what's causing these strange noises..."
+  .. "swamp to investigate what's causing these strange noises...@\n\n\n"
+  .. "\t\t\t\t\t\t\t\t\t\t Click to continue"
 
 }
 

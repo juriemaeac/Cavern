@@ -2,20 +2,20 @@ sprites = {}
 
 -- Images for drawing the player
 sprites.player = {}
-sprites.player.head = love.graphics.newImage('sprites/newPlayer2/head.png')
-sprites.player.body = love.graphics.newImage('sprites/newPlayer2/body1.png')
-sprites.player.armEmpty = love.graphics.newImage('sprites/newPlayer2/arm.png')
-sprites.player.backArm = love.graphics.newImage('sprites/newPlayer2/backArm.png')
-sprites.player.armBlaster = love.graphics.newImage('sprites/newPlayer2/armBlaster.png')
-sprites.player.armRocket = love.graphics.newImage('sprites/newPlayer2/armRocket.png')
-sprites.player.armSpear = love.graphics.newImage('sprites/newPlayer2/armSpear.png')
-sprites.player.armSpearLoaded = love.graphics.newImage('sprites/newPlayer2/armSpearLoaded.png')
-sprites.player.spear = love.graphics.newImage('sprites/newPlayer/spear.png')
+sprites.player.head = love.graphics.newImage('sprites/player/head.png')
+sprites.player.body = love.graphics.newImage('sprites/player/body1.png')
+sprites.player.armEmpty = love.graphics.newImage('sprites/player/arm.png')
+sprites.player.backArm = love.graphics.newImage('sprites/player/backArm.png')
+sprites.player.armBlaster = love.graphics.newImage('sprites/player/armBlaster.png')
+sprites.player.armRocket = love.graphics.newImage('sprites/player/armRocket.png')
+sprites.player.armSpear = love.graphics.newImage('sprites/player/armSpear.png')
+sprites.player.armSpearLoaded = love.graphics.newImage('sprites/player/armSpearLoaded.png')
+sprites.player.spear = love.graphics.newImage('sprites/player/spear.png')
 sprites.player.bomb = love.graphics.newImage('sprites/player/bomb.png')
-sprites.player.jetpack = love.graphics.newImage('sprites/newPlayer/jetpack.png')
-sprites.player.aquaPack = love.graphics.newImage('sprites/newPlayer/aquapack.png')
+sprites.player.jetpack = love.graphics.newImage('sprites/player/jetpack.png')
+sprites.player.aquaPack = love.graphics.newImage('sprites/player/aquapack.png')
 
-sprites.player.newPlayer = love.graphics.newImage('sprites/newPlayer/newPlayer.png')
+sprites.player.newPlayer = love.graphics.newImage('sprites/player/newPlayer.png')
 
 -- Images for everything relating to the environment and levels
 sprites.environment = {}
