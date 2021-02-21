@@ -578,7 +578,8 @@ function player:hurt(damage)
   if self.damaged == 0 then
     self.damaged = 1
     
-    --IMMUNE KO MUNA PARA NAMAN MAKARATING AKO SA DULO NG HINDI NAMAMATAY
+    --[[IMMUNE KO MUNA PARA NAMAN MAKARATING AKO SA DULO NG HINDI NAMAMATAY
+    UNCOMMENT MO NALANG TONG NASA BABA PARA OK NA UNG HEALTH NG PLAYER]]
     --self.health = self.health - damage
     damages:spawnDamage(self.physics:getX(), self.physics:getY(), damage)
     shake:start(0.05, 6, 0.01, 0.3)

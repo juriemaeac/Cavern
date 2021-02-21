@@ -3,13 +3,13 @@
 messages = {}
 
 messages.blaster = {
-  "You got the blaster!",
+  "You got the Bow!",
   "Use the mouse to aim, and\n<LEFT CLICK> to shoot!"
 }
 messages.blaster.img = sprites.pickups.blaster
 
 messages.rocket = {
-  "You got the Rocket Launcher!",
+  "You got the an explosive Pistol!",
   "<LEFT CLICK> to launch a missile\nthat explodes upon impact,\ndealing massive damage.",
   "Press the <SPACEBAR> or scroll\nthe mouse wheel to switch\nyour equipped weapon."
 }
