@@ -430,8 +430,8 @@ function player:draw()
   love.graphics.draw(jetSprite, px + (player.facing * -12), py + 10, nil, player.facing, 1, 65, 85)
   -- body uses player.facing to turn the correct direction (towards the mouse)
   love.graphics.draw(sprites.player.body, px + (player.facing * -14), py+3, nil, player.facing, 1, 38, 60)
-  -- helmet rotates towards the mouse, flips vertically if facing left
-  love.graphics.draw(sprites.player.helmet, px + (player.facing * 2), py-44, headAngle, 1, flip, 32, 64)
+  -- head rotates towards the mouse, flips vertically if facing left
+  love.graphics.draw(sprites.player.head, px + (player.facing * 2), py-44, headAngle, 1, flip, 32, 64)
 
   -- Draw arms / weapons
   if player.weapon == 0 then
