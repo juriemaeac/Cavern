@@ -1,15 +1,13 @@
-function love.load()
+--transition time for fading and changing maps
+local cron = require 'cron'
 
-  --FOR INTRO
-  --[[image = love.graphics.newImage("spritesheet.png")
-  quads = {}
-	local imgWidth = image:getWidth()
-  local imgHeight = image:getHeight()
-	local spriteWidth = imgWidth / 33
-	for i=0,33-1 do
-		table.insert(quads, love.graphics.newQuad(i * spriteWidth, 0, imgHeight, imgWidth, imgHeight))
-	end
-  timer = 0]]
+local seconds = 3 --time limit
+local msg = " "
+local timer = cron.every(1, function() seconds = seconds - 1 end)
+--after 2 secs to display Main menu
+local atimer = cron.after(2, function() changeToMap("rmMainMenu") end) 
+
+function love.load()
 
   -- This function configures game window and performs additional setup
   require("source/startup/startup")
@@ -29,8 +27,6 @@ function love.load()
 end
 
 function love.update(dt)
-  --FOR INTRO
-  --timer = timer + dt * 3
 
   if gameState.state == 1 then
     -- Handles most updating for the game
@@ -41,12 +37,12 @@ function love.update(dt)
   scroll:update(dt)
   textBox:update(dt)
 
+  timer:update(dt)
+	atimer:update(dt)
   
 end
 
 function love.draw()
-  --FOR INTRO
-  --love.graphics.draw(image, quads[(math.floor(timer) % 33) + 1], 100, 100)
 
   cam:attach()
   

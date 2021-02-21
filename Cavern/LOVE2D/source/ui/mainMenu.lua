@@ -4,13 +4,14 @@ buttons = {}
 buttons[1] = {376, 380, 360, 72, "New Game"}
 buttons[2] = {376, 476, 360, 72, "Continue"}
 
--- Dimensions and offset for the small corner buttons (sound and GitHub)
+-- Dimensions and offset for the small corner buttons (sound and logo)
 local smSize = 72
 local smOffset = 14
 
 -- Place buttons 3 and 4 in the left and right corners respectively
 buttons[3] = {smOffset, gameHeight - smSize - smOffset, smSize, smSize, ".sound"}
-buttons[4] = {gameWidth - smSize - smOffset, gameHeight - smSize - smOffset, smSize, smSize, ".github"}
+buttons[4] = {gameWidth - smSize - smOffset -20, gameHeight - smSize - smOffset-20,smSize+20, smSize+20, ".logo"}
+
 
 -- This value stores the message displayed at the bottom of the menu
 buttons.message = ""
@@ -18,12 +19,16 @@ buttons.message = ""
 -- This function draws everything on the Main Menu
 function menuDraw()
 
+  if gameState.room == "rmLogo" then
+    --display game logo
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.draw(sprites.ui.intro, -130,1)
+  end  
+  
   if gameState.room == "rmMainMenu" then
-
     love.graphics.setFont(fonts.menu.title)
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.printf("Swamp Busters", 0, 40 * scale, gameWidth * scale, "center")
-
     -- Start message off as nothing, will be updated if hovering over a button
     buttons.message = ""
 
@@ -51,7 +56,7 @@ function menuDraw()
           buttons.message = "Continue from where you left off"
         elseif bText == ".sound" then
           buttons.message = "Turn music and sound effects on or off"
-        elseif bText == ".github" then
+        elseif bText == ".logo" then
           buttons.message = "Created by Lance Philip Parungao\nBSCpE 2 - 6\nas a requirement in Game Development course subject."
         end
 
@@ -65,8 +70,8 @@ function menuDraw()
           love.graphics.setColor(0.35, 0.35, 0.35, 0.5)
         end
         love.graphics.draw(sprites.ui.sound, bX + 15 * scale, bY + 9 * scale, 0, scale, scale)
-      elseif bText == ".github" then
-        love.graphics.draw(sprites.ui.github, bX + 9 * scale, bY + 8 * scale, 0, scale, scale)
+      elseif bText == ".logo" then
+        love.graphics.draw(sprites.ui.logo, bX + 9 * scale, bY + 8 * scale, 0, scale , scale)
       else
         love.graphics.printf(bText, bX, bY + 8 * scale, bW, "center")
       end
@@ -74,7 +79,7 @@ function menuDraw()
     end
 
   end
-
+  
   love.graphics.setColor(1, 1, 1, 1)
   love.graphics.setFont(fonts.menu.message)
   love.graphics.printf(buttons.message, 0, love.graphics.getHeight() - 100, love.graphics.getWidth(), "center")
@@ -133,7 +138,6 @@ function buttons:click()
         changeToMap("rmIntro")
 
       elseif i == 3 then -- Sound button
-
         -- Toggle sound to be on/off
         soundOn = not soundOn
         if soundOn then
@@ -141,13 +145,7 @@ function buttons:click()
         else
           soundManager:musicFade()
         end
-
-      elseif i == 4 then -- GitHub button
-
-        -- Open the GitHub page for this game!
-        --love.system.openURL("https://github.com/juriemaeac/random")
-        
-
+      elseif i == 4 then 
       end
 
       soundManager:play("click")

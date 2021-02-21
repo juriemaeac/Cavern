@@ -18,10 +18,10 @@ credits.bottom = 12752
 -- Example: if Y position was 100, text would be
 -- displayed at credits.bottom - 100
 
-table.insert(credits, {"****************************YOU WON****************************", "center", 2304, fonts.credits.title})
+table.insert(credits, {"***YOU WON***", "center", 2304, fonts.credits.title})
 table.insert(credits, {"SWAMP BUSTERS", "center", 4608, fonts.credits.me})
 table.insert(credits, {"Created by Lance Philip Parungao", "center", 6912})
-table.insert(credits, {"All art are personally made.", "center", 7040})
+table.insert(credits, {"All arts are personally made.", "center", 7040})
 table.insert(credits, {"Thank you for playing!", "center", 11892, fonts.credits.me})
 
 function credits:draw()

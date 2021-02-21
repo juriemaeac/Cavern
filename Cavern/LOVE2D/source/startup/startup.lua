@@ -6,7 +6,7 @@ function startup()
   love.window.setTitle("Swamp Busters")
 
   -- Window icon
-  local icon = love.image.newImageData('sprites/enemies/spikeBody1.png')
+  local icon = love.image.newImageData('sprites/ui/logoSwampWhite.png')
   love.window.setIcon(icon)
 
   -- Game resolution
@@ -51,8 +51,11 @@ function startup()
   require("source/startup/main_require")
   getGlobals()
 
+  --fade in for game logo
+  blackScreen:fadeIn(1)
   -- Sets first map of the game
-  changeToMap("rmMainMenu")
+  changeToMap("rmLogo")
+
 
   -- Start the music!
   soundManager:startMusic("menu")

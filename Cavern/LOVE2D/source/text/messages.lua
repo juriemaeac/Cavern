@@ -44,9 +44,9 @@ messages.intro = {
   .. "weird bubbling and gushing sounds emanates from the surface \n"
   .. "of the swamp. @His sleep was disturbed abruptly by this sounds\n"
   .. "so, he  geared up and marched grumpily to the swamp.@\n\n"
-  .. "With his snorkeling goggles and his old, clanky breathing apparatus,\n"
-  .. "he dived into the murky waters of this stinky old swamp to \n"
-  .. "investigate what's causing these strange noises..."
+  .. "With his snorkeling goggles and his old, clanky breathing \n"
+  .. "apparatus, he dived into the murky waters of this stinky old \n"
+  .. "swamp to investigate what's causing these strange noises..."
 
 }
 

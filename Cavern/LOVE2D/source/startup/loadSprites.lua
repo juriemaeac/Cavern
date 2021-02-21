@@ -20,7 +20,7 @@ sprites.player.newPlayer = love.graphics.newImage('sprites/newPlayer/newPlayer.p
 -- Images for everything relating to the environment and levels
 sprites.environment = {}
 sprites.environment.bg = love.graphics.newImage('sprites/environment/bg1.png')
-sprites.environment.wall = love.graphics.newImage('sprites/environment/wall_old.png')--for cracks
+sprites.environment.wall = love.graphics.newImage('sprites/environment/wall_old.png')--wall for for cracks(disabled in drawWalls.lua)
 sprites.environment.waterSheet = love.graphics.newImage('sprites/environment/waterSheet.png')
 sprites.environment.rockySurface = love.graphics.newImage('sprites/environment/rockySurface1.png')
 sprites.environment.crack = love.graphics.newImage('sprites/environment/crack1.png')
@@ -62,4 +62,6 @@ sprites.fire.f5 = love.graphics.newImage('sprites/fire/fire_5.png')
 -- Images for UI
 sprites.ui = {}
 sprites.ui.sound = love.graphics.newImage('sprites/ui/sound.png')
-sprites.ui.github = love.graphics.newImage('sprites/ui/info.png')
+sprites.ui.logo = love.graphics.newImage('sprites/ui/logo.png')--(team logo)
+sprites.ui.intro = love.graphics.newImage('sprites/ui/intro.png')
+

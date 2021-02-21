@@ -43,6 +43,7 @@ function loadMaps()
   maps.rmCredits = sti("maps/rmCredits.lua")
   maps.rmIntro = sti("maps/rmIntro.lua")
   maps.rmMainMenu = sti("maps/rmMainMenu.lua")
+  maps.rmLogo = sti("maps/rmLogo.lua")
 
   -- utilize maps["blank"] syntax to read map data
 end
